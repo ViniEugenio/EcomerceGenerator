@@ -1,0 +1,12 @@
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Domain\bin\Debug\net6.0\EcommerceGenerator.Domain.deps.json
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Domain\bin\Debug\net6.0\EcommerceGenerator.Domain.dll
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Domain\bin\Debug\net6.0\EcommerceGenerator.Domain.pdb
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Domain\obj\Debug\net6.0\EcommerceGenerator.Domain.csproj.AssemblyReference.cache
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Domain\obj\Debug\net6.0\EcommerceGenerator.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Domain\obj\Debug\net6.0\EcommerceGenerator.Domain.AssemblyInfoInputs.cache
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Domain\obj\Debug\net6.0\EcommerceGenerator.Domain.AssemblyInfo.cs
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Domain\obj\Debug\net6.0\EcommerceGenerator.Domain.csproj.CoreCompileInputs.cache
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Domain\obj\Debug\net6.0\EcommerceGenerator.Domain.dll
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Domain\obj\Debug\net6.0\refint\EcommerceGenerator.Domain.dll
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Domain\obj\Debug\net6.0\EcommerceGenerator.Domain.pdb
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Domain\obj\Debug\net6.0\ref\EcommerceGenerator.Domain.dll

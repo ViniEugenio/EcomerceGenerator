@@ -1,17 +1,199 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator\\EcommerceGenarator.API\\EcommerceGenarator.Api.csproj": {}
+    "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator.API\\EcommerceGenarator.Api.csproj": {}
   },
   "projects": {
-    "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator\\EcommerceGenarator.API\\EcommerceGenarator.Api.csproj": {
+    "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator.API\\EcommerceGenarator.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator\\EcommerceGenarator.API\\EcommerceGenarator.Api.csproj",
+        "projectUniqueName": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator.API\\EcommerceGenarator.Api.csproj",
         "projectName": "EcommerceGenarator.Api",
-        "projectPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator\\EcommerceGenarator.API\\EcommerceGenarator.Api.csproj",
+        "projectPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator.API\\EcommerceGenarator.Api.csproj",
         "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
-        "outputPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator\\EcommerceGenarator.API\\obj\\",
+        "outputPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Application\\EcommerceGenerator.Application.csproj": {
+                "projectPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Application\\EcommerceGenerator.Application.csproj"
+              },
+              "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Infrastructure\\EcommerceGenerator.Infrastructure.csproj": {
+                "projectPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Infrastructure\\EcommerceGenerator.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Application\\EcommerceGenerator.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Application\\EcommerceGenerator.Application.csproj",
+        "projectName": "EcommerceGenerator.Application",
+        "projectPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Application\\EcommerceGenerator.Application.csproj",
+        "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
+        "outputPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj": {
+                "projectPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj",
+        "projectName": "EcommerceGenerator.Domain",
+        "projectPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj",
+        "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
+        "outputPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,9 +226,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Swashbuckle.AspNetCore": {
+            "Microsoft.AspNetCore.Identity": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[6.0.10, )"
             }
           },
           "imports": [
@@ -61,9 +247,97 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Infrastructure\\EcommerceGenerator.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Infrastructure\\EcommerceGenerator.Infrastructure.csproj",
+        "projectName": "EcommerceGenerator.Infrastructure",
+        "projectPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Infrastructure\\EcommerceGenerator.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
+        "outputPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj": {
+                "projectPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

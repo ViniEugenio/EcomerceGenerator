@@ -1,0 +1,15 @@
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\bin\Debug\net6.0\EcommerceGenerator.Application.deps.json
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\bin\Debug\net6.0\EcommerceGenerator.Application.dll
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\bin\Debug\net6.0\EcommerceGenerator.Application.pdb
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\obj\Debug\net6.0\EcommerceGenerator.Application.csproj.AssemblyReference.cache
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\obj\Debug\net6.0\EcommerceGenerator.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\obj\Debug\net6.0\EcommerceGenerator.Application.AssemblyInfoInputs.cache
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\obj\Debug\net6.0\EcommerceGenerator.Application.AssemblyInfo.cs
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\obj\Debug\net6.0\EcommerceGenerator.Application.csproj.CoreCompileInputs.cache
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\obj\Debug\net6.0\EcommerceGenerator.Application.dll
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\obj\Debug\net6.0\refint\EcommerceGenerator.Application.dll
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\obj\Debug\net6.0\EcommerceGenerator.Application.pdb
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\obj\Debug\net6.0\ref\EcommerceGenerator.Application.dll
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\bin\Debug\net6.0\EcommerceGenerator.Domain.dll
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\bin\Debug\net6.0\EcommerceGenerator.Domain.pdb
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Application\obj\Debug\net6.0\EcommerceGenerator.Application.csproj.CopyComplete

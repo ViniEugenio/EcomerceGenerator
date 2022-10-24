@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj": {}
+    "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj": {}
   },
   "projects": {
-    "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj": {
+    "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj",
+        "projectUniqueName": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj",
         "projectName": "EcommerceGenerator.Domain",
-        "projectPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj",
+        "projectPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\EcommerceGenerator.Domain.csproj",
         "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
-        "outputPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenarator\\EcommerceGenerator.Domain\\obj\\",
+        "outputPath": "F:\\Repositórios\\EcommerceGenerator\\EcommerceGenerator.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

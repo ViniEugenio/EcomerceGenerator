@@ -1,0 +1,17 @@
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\bin\Debug\net6.0\EcommerceGenerator.Infrastructure.deps.json
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\bin\Debug\net6.0\EcommerceGenerator.Infrastructure.runtimeconfig.json
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\bin\Debug\net6.0\EcommerceGenerator.Infrastructure.dll
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\bin\Debug\net6.0\EcommerceGenerator.Infrastructure.pdb
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\bin\Debug\net6.0\EcommerceGenerator.Domain.dll
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\bin\Debug\net6.0\EcommerceGenerator.Domain.pdb
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\obj\Debug\net6.0\EcommerceGenerator.Infrastructure.csproj.AssemblyReference.cache
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\obj\Debug\net6.0\EcommerceGenerator.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\obj\Debug\net6.0\EcommerceGenerator.Infrastructure.AssemblyInfoInputs.cache
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\obj\Debug\net6.0\EcommerceGenerator.Infrastructure.AssemblyInfo.cs
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\obj\Debug\net6.0\EcommerceGenerator.Infrastructure.csproj.CoreCompileInputs.cache
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\obj\Debug\net6.0\EcommerceGenerator.Infrastructure.csproj.CopyComplete
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\obj\Debug\net6.0\EcommerceGenerator.Infrastructure.dll
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\obj\Debug\net6.0\refint\EcommerceGenerator.Infrastructure.dll
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\obj\Debug\net6.0\EcommerceGenerator.Infrastructure.pdb
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\obj\Debug\net6.0\EcommerceGenerator.Infrastructure.genruntimeconfig.cache
+F:\Repositórios\EcommerceGenerator\EcommerceGenerator.Infrastructure\obj\Debug\net6.0\ref\EcommerceGenerator.Infrastructure.dll
