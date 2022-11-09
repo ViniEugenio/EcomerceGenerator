@@ -14,7 +14,7 @@ namespace EcommerceGenarator.Api.Configurations
             var config = new AutoMapper.MapperConfiguration(cfg =>
             {
 
-                cfg.CreateMap<Client, ClientListViewModel>();
+                cfg.CreateMap<Client, ClientViewModel>();
                 cfg.CreateMap<CreateClientCommand, Client>();
 
             });

@@ -28,8 +28,10 @@ namespace EcommerceGenerator.Application.Commands.CreateClientCommand
 
             if (response.IsValid())
             {
-                await ClientRepository.CreateClient(Mapper.Map<Client>(request));
+
+                response.AddData(await ClientRepository.CreateClient(Mapper.Map<Client>(request)));
                 response.AddMessage(ClientMessages.SuccessRegisterClient);
+
             }
 
             return response;
@@ -51,7 +53,7 @@ namespace EcommerceGenerator.Application.Commands.CreateClientCommand
                 response.AddError(ClientMessages.ClientDuplicatedHost);
             }
 
-            if (response.IsValid())
+            if (!response.IsValid())
             {
                 response.AddMessage(ClientMessages.ErrorRegisteringClient);
             }

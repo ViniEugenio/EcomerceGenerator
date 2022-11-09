@@ -4,10 +4,13 @@ namespace EcommerceGenerator.Domain.Interfaces.Repositories.AdminRepositories
 {
     public interface IClientRepository : IRepository<Client>
     {
+
         Task<string> GetDataBaseClient();
         Task<bool> UpdatedDatabase(string DataBase);
         Task UpdateOutdatedClients();
-        Task CreateClient(Client model);
+        Task<Client> CreateClient(Client model);
+        Task UpdateClientDataBase(string DataBase);
+        Task DeleteClient(Client model);
 
     }
 }

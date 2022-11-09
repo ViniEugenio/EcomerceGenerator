@@ -10,7 +10,8 @@ namespace EcommerceGenerator.Domain.Interfaces.Repositories
         Task<T> GetById(Guid Id);
         Task<bool> Exists(Expression<Func<T, bool>> expression);
         Task<List<T>> GetAll(Expression<Func<T, bool>> expression);
-        Task Add(T model);
+        Task<List<T>> GetAll();
+        Task<T> Add(T model);
         Task Update(T model);
         Task SaveChanges();
 

@@ -5,6 +5,7 @@
 
         public string Message { get; set; }
         public List<string> Errors { get; set; } = new List<string>();
+        public object Data { get; set; }
 
         public void AddError(string Message)
         {
@@ -24,6 +25,11 @@
         public bool IsValid()
         {
             return !Errors.Any();
+        }
+
+        public void AddData(object Data)
+        {
+            this.Data = Data;
         }
 
     }

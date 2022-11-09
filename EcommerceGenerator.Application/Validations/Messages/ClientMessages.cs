@@ -3,12 +3,17 @@
     public static class ClientMessages
     {
 
-        public static string EmptyClientName = "Por favor informe o nome do cliente";
-        public static string EmptyClientHost = "Por favor informe um endereço válido para o cliente";
-        public static string ClientDuplicatedName = "Já existe um cliente com este nome";
-        public static string ClientDuplicatedHost = "Já existe um cliente com este ambiente";
-        public static string SuccessRegisterClient = "Cliente cadastrado com sucesso!";
-        public static string ErrorRegisteringClient = "Não foi possível cadastrar o cliente";
+        public readonly static string EmptyClientName = "Por favor informe o nome do cliente";
+        public readonly static string EmptyClientHost = "Por favor informe um ambiente válido para o cliente";
+        public readonly static string ClientDuplicatedName = "Já existe um cliente com este nome";
+        public readonly static string ClientDuplicatedHost = "Já existe um cliente com este ambiente";
+        public readonly static string SuccessRegisterClient = "Cliente cadastrado com sucesso!";
+        public readonly static string ErrorRegisteringClient = "Não foi possível cadastrar o cliente";
+        public readonly static string NotFoundedClient = "O cliente não foi encontrado";
+        public readonly static string SuccessDeleteClient = "O cliente foi excluído com sucesso";
+        public readonly static string ErrorDeleteClient = "Não foi possível excluir o cliente";
+        public readonly static string SuccessUpdateClient = "O cliente foi alterado com sucesso";
+        public readonly static string ErrorUpdateClient = "Não foi possível alterar o cliente";
 
     }
 }

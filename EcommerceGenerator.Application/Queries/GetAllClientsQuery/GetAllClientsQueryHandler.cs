@@ -5,7 +5,7 @@ using MediatR;
 
 namespace EcommerceGenerator.Application.Queries.GetAllClientsQuery
 {
-    internal class GetAllClientsQueryHandler : IRequestHandler<GetAllClientsQuery, List<ClientListViewModel>>
+    internal class GetAllClientsQueryHandler : IRequestHandler<GetAllClientsQuery, List<ClientViewModel>>
     {
 
         private readonly IMapper Mapper;
@@ -19,10 +19,10 @@ namespace EcommerceGenerator.Application.Queries.GetAllClientsQuery
 
         }
 
-        public async Task<List<ClientListViewModel>> Handle(GetAllClientsQuery request, CancellationToken cancellationToken)
+        public async Task<List<ClientViewModel>> Handle(GetAllClientsQuery request, CancellationToken cancellationToken)
         {
 
-            var FoundedClients = Mapper.Map<List<ClientListViewModel>>(await ClientRepository.GetAll(client => client.Active));
+            var FoundedClients = Mapper.Map<List<ClientViewModel>>(await ClientRepository.GetAll());
 
             if (FoundedClients.Any())
             {
@@ -36,7 +36,7 @@ namespace EcommerceGenerator.Application.Queries.GetAllClientsQuery
 
             }
 
-            return FoundedClients;
+            return FoundedClients.OrderByDescending(client => client.CreatedDate).ToList();
 
         }
 

@@ -2,6 +2,7 @@
 using EcommerceGenerator.Domain.Interfaces.Repositories.AdminRepositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.InteropServices;
 
 namespace EcommerceGenerator.Infrastructure.Persistence.Repositories.AdminRepositories
 {
@@ -15,13 +16,15 @@ namespace EcommerceGenerator.Infrastructure.Persistence.Repositories.AdminReposi
             this.HttpAcessor = HttpAcessor;
         }
 
-        public async Task CreateClient(Client model)
+        public async Task<Client> CreateClient(Client model)
         {
 
-            await Add(model);
+            model.DataBase = $"{model.Name.ToLower().Replace(" ", string.Empty)}Ecommerce";
 
-            model.DataBase = model.Name.ToUpper().Replace(" ", string.Empty);
-            await UpdatedDatabase(model.DataBase);
+            var NewClient = await Add(model);
+            await UpdateClientDataBase(model.DataBase);
+
+            return NewClient;
 
         }
 
@@ -48,22 +51,46 @@ namespace EcommerceGenerator.Infrastructure.Persistence.Repositories.AdminReposi
 
         }
 
+        public async Task UpdateClientDataBase(string DataBase)
+        {
+
+            var Context = new MainContext(DataBase);
+            await Context.Database.MigrateAsync();
+
+        }
+
         public async Task UpdateOutdatedClients()
         {
 
             var FoundedClients = await GetAll(client => client.Active);
             foreach (var client in FoundedClients)
             {
+
                 if (!await UpdatedDatabase(client.DataBase))
                 {
-
-                    var Context = new MainContext(client.DataBase);
-                    await Context.Database.MigrateAsync();
-
+                    await UpdateClientDataBase(client.DataBase);
                 }
+
             }
 
         }
 
+        public async Task DeleteClient(Client model)
+        {
+
+            if (model != null)
+            {
+
+                model.UpdatedDate = DateTime.Now;
+                model.Active = false;
+
+                await Update(model);
+
+                var Context = new MainContext(model.DataBase);
+                await Context.Database.EnsureDeletedAsync();
+
+            }
+
+        }
     }
 }

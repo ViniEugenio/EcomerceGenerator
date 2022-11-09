@@ -3,7 +3,7 @@ using MediatR;
 
 namespace EcommerceGenerator.Application.Queries.GetAllClientsQuery
 {
-    public class GetAllClientsQuery : IRequest<List<ClientListViewModel>>
+    public class GetAllClientsQuery : IRequest<List<ClientViewModel>>
     {
     }
 }

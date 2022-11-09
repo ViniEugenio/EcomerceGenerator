@@ -1,5 +1,6 @@
 ﻿using EcommerceGenerator.Application.Commands.CreateClientCommand;
 using EcommerceGenerator.Application.Validations.Messages;
+using EcommerceGenerator.Domain.Interfaces.Repositories.AdminRepositories;
 using FluentValidation;
 
 namespace EcommerceGenerator.Application.Validations.Client

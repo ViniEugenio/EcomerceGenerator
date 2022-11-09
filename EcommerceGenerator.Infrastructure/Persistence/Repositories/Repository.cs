@@ -38,9 +38,18 @@ namespace EcommerceGenerator.Infrastructure.Persistence.Repositories
             return await Db.Where(expression).ToListAsync();
         }
 
-        public async Task Add(T model)
+        public async Task<List<T>> GetAll()
         {
+            return await Db.ToListAsync();
+        }
+
+        public async Task<T> Add(T model)
+        {
+
             await Db.AddAsync(model);
+            await SaveChanges();
+
+            return model;
 
         }
 
