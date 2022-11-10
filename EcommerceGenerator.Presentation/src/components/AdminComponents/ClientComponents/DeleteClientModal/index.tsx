@@ -14,11 +14,11 @@ interface DeleteClientModalProps {
 
 export function DeleteClientModal({isOpen, modalHandler, clientId}: DeleteClientModalProps) {
 
-    const { DeleteClient } = useContext(ClientsContext);
+    const { ChangeStatusClient } = useContext(ClientsContext);
 
     function handlerDeleteClient() {
 
-        DeleteClient(clientId);
+        ChangeStatusClient(clientId);
         modalHandler();
 
     }

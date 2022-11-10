@@ -12,7 +12,7 @@ interface clientContextData {
 
     clients: cliente[];
     CreateClient: (model: clientCreateData) => Promise<string[]>;
-    DeleteClient: (clientId: string) => void;
+    ChangeStatusClient: (clientId: string) => void;
     UpdateClient: (model: cliente) => Promise<string[]>;
 
 }
@@ -60,12 +60,22 @@ export function ClientsProvider({children} : ClientContextProps) {
        
     }
 
-    function DeleteClient(clientId: string) {
+    function ChangeStatusClient(clientId: string) {
             
-        api.delete<response>(`https://localhost:7159/api/admin/client/${clientId}`)
+        api.patch<response>(`https://localhost:7159/api/admin/client/${clientId}`)
         .then( response => {
 
-            setClients(clients.filter(client => client.id != clientId));
+            setClients(clients.map(client => {
+
+                if(client.id === clientId) {
+
+                    client.active = !client.active;                   
+
+                }
+
+                return client;
+
+            }));
 
         })
         .catch(error=>{
@@ -81,18 +91,17 @@ export function ClientsProvider({children} : ClientContextProps) {
         let errors: string[] = [];
 
         await api.put<response>('https://localhost:7159/api/admin/client', model)
-        .then(response => {
+        .then(response => {          
 
-            let updateClients = [...clients];
-            updateClients.map((cliente, index) => {                
+           setClients(clients.map(client => {
 
-                if(cliente.id === model.id) {
-                    clients[index] = response.data.data;
+                if(client.id === model.id) {
+                    return response.data.data;
                 }
 
-           });
+                return client;
 
-           setClients(updateClients);
+           }));
 
         })
         .catch(error => {
@@ -108,7 +117,7 @@ export function ClientsProvider({children} : ClientContextProps) {
         <ClientsContext.Provider value={{
             clients,
             CreateClient,
-            DeleteClient,
+            ChangeStatusClient,
             UpdateClient
         }}>
 

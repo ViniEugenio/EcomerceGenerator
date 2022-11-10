@@ -1,5 +1,5 @@
 import { Cabecalho, Container, ContainerOpcoes, Dado, Dados, Tabela, THead } from "./style";
-import { FaRedoAlt, FaPlus, FaTrash, FaEdit } from "react-icons/fa";
+import { FaRedoAlt, FaPlus, FaTimesCircle, FaEdit, FaCheck } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { ActiveLabel, DisabledLabel } from "../../../../styles/commonStyles";
 import { CreateClientModal } from "../CreateClientModal";
@@ -81,16 +81,30 @@ export function ListClient() {
                             </Dado>
                             <Dado>
 
-                                <FaTrash onClick={() => {
-
-                                    setActualClientId(cliente.id);
-                                    openModalDeleteClient();
+                                { 
+                                    cliente.active ? 
                                     
-                                }} className="icone" title="Exluir" />
+                                    <FaTimesCircle onClick={() => {
+
+                                        setActualClientId(cliente.id);
+                                        openModalDeleteClient();
+                                        
+                                    }} className="icone" title="Desativar" /> 
+                                    
+                                    :
+
+                                    <FaCheck onClick={() => {
+
+                                        setActualClientId(cliente.id);
+                                        openModalDeleteClient();
+                                        
+                                    }} className="icone" title="Desativar" /> 
+
+                                }
 
                                 <FaEdit onClick={() => {
 
-                                    setActualClient(cliente);
+                                    setActualClient({...cliente});
                                     openModalUpdateClient();
 
                                 }} className="icone" title="Editar"/>

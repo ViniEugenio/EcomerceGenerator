@@ -1,8 +1,9 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useContext, useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { cliente } from '../../../../models/cliente';
 import { FaTimes } from "react-icons/fa";
 import { Container, ContainerErrors, Input } from './style';
+import { ClientsContext } from '../ClientsContext';
 
 interface UpdateClientModalProps {
     isOpen: boolean;
@@ -12,15 +13,59 @@ interface UpdateClientModalProps {
 
 export function UpdateClientModal({isOpen, modalHandler, ActualClient}: UpdateClientModalProps) {   
 
+    const { UpdateClient } = useContext(ClientsContext);
+
     const[nameError, setNameError] = useState(false);
     const[nameListError, setNameListError] = useState<string[]>([]);
 
     const[hostError, setHostError] = useState(false);
     const[hostListError, setHostListError] = useState<string[]>([]);
 
-    function handleUpdateClient(event: FormEvent) {
+    function cleanForm() {
+
+        setNameError(false);
+        setNameListError([]);
+
+        setHostError(false);
+        setHostListError([]);
+
+    }
+
+    async function handleUpdateClient(event: FormEvent) {
 
         event.preventDefault();
+        cleanForm();
+
+        const errors = await UpdateClient(ActualClient);
+
+        if(errors.length > 0 ) {
+
+            if(errors.some(e => e.includes('nome'))) {
+
+                setNameError(true);
+                setNameListError(errors.filter(e => e.includes('nome')));
+
+            }
+
+            if(errors.some(e => e.includes('ambiente'))) {
+
+                setHostError(true);
+                setHostListError(errors.filter(e => e.includes('ambiente')));
+
+            }
+
+        }
+
+        else {
+            closeModal();
+        }
+
+    }
+
+    function closeModal() {
+        
+        cleanForm();
+        modalHandler();
 
     }
 
@@ -28,14 +73,14 @@ export function UpdateClientModal({isOpen, modalHandler, ActualClient}: UpdateCl
 
         <Modal 
         isOpen={isOpen} 
-        onRequestClose={modalHandler}
+        onRequestClose={closeModal}
         overlayClassName="modal-overlay"
         className="modal-content"
         >
 
             <Container onSubmit={handleUpdateClient}>
 
-                <FaTimes className="icone modal-close" onClick={modalHandler}/>
+                <FaTimes className="icone modal-close" onClick={closeModal}/>
                 <h2>Alterar cliente</h2>
 
                 <Input value={ActualClient.name} placeholder='Digite o nome do cliente' 

@@ -1,5 +1,5 @@
-﻿using EcommerceGenerator.Application.Commands.CreateClientCommand;
-using EcommerceGenerator.Application.Commands.DeleteClientCommand;
+﻿using EcommerceGenerator.Application.Commands.ChangeStatusClientCommand;
+using EcommerceGenerator.Application.Commands.CreateClientCommand;
 using EcommerceGenerator.Application.Commands.UpdateClientCommand;
 using EcommerceGenerator.Application.Commands.UpdateOutdatedClientsCommand;
 using EcommerceGenerator.Application.Queries.GetAllClientsQuery;
@@ -60,11 +60,11 @@ namespace EcommerceGenarator.Api.Controllers
 
         }
 
-        [HttpDelete("{ClientId}")]
-        public async Task<IActionResult> DeleteClient(Guid ClientId)
+        [HttpPatch("{ClientId}")]
+        public async Task<IActionResult> ChangeStatusClient(Guid ClientId)
         {
 
-            var result = await Mediator.Send(new DeleteClientCommand()
+            var result = await Mediator.Send(new ChangeStatusClientCommand()
             {
                 ClientId = ClientId
             });

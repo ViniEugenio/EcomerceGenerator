@@ -2,7 +2,6 @@
 using EcommerceGenerator.Domain.Interfaces.Repositories.AdminRepositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using System.Runtime.InteropServices;
 
 namespace EcommerceGenerator.Infrastructure.Persistence.Repositories.AdminRepositories
 {
@@ -75,19 +74,16 @@ namespace EcommerceGenerator.Infrastructure.Persistence.Repositories.AdminReposi
 
         }
 
-        public async Task DeleteClient(Client model)
+        public async Task ChangeStatusClient(Client model)
         {
 
             if (model != null)
             {
 
                 model.UpdatedDate = DateTime.Now;
-                model.Active = false;
+                model.Active = !model.Active;
 
                 await Update(model);
-
-                var Context = new MainContext(model.DataBase);
-                await Context.Database.EnsureDeletedAsync();
 
             }
 

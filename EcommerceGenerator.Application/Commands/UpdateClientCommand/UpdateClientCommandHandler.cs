@@ -44,7 +44,10 @@ namespace EcommerceGenerator.Application.Commands.UpdateClientCommand
 
                 await ClientRepository.Update(FoundedClient);
 
-                response.AddData(Mapper.Map<ClientViewModel>(FoundedClient));
+                var data = Mapper.Map<ClientViewModel>(FoundedClient);
+                data.UpdatedDatabase = await ClientRepository.UpdatedDatabase(FoundedClient.DataBase);
+
+                response.AddData(data);
                 response.AddMessage(ClientMessages.SuccessUpdateClient);
 
             }
