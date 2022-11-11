@@ -14,6 +14,12 @@
         public readonly static string ErrorDeleteClient = "Não foi possível excluir o cliente";
         public readonly static string SuccessUpdateClient = "O cliente foi alterado com sucesso";
         public readonly static string ErrorUpdateClient = "Não foi possível alterar o cliente";
+        public readonly static string ErrorUpdateOutdatedClient = "Não foi possível atualizar o cliente";
+        public readonly static string SuccessUpdatedOutdatedClient = "Cliente atualizado com sucesso";
+        public readonly static string DatabaseUpdated = "O cliente já está atualizado";
+        public readonly static string AllClientsUpdates = "Todos os clientes já estão atualizado";
+        public readonly static string ErrorUpdatedOutdatedClients = "Não foi possível atualizar os clientes";
+        public readonly static string SucessUpdatedOutdatedClients = "Todos os clientes foram atualizados";
 
     }
 }

@@ -10,7 +10,7 @@ import { UpdateClientModal } from "../UpdateClientModal";
 
 export function ListClient() {
 
-    const {clients} = useContext(ClientsContext);
+    const { clients, UpdateOutdatedClient, UpdatedOutdatedClients } = useContext(ClientsContext);
     
     const[modalOpenCreateClient, handlerModalCreateClient] = useState(false);
 
@@ -52,7 +52,7 @@ export function ListClient() {
             
                 <ContainerOpcoes>
                     <FaPlus className="icone" onClick={openModalCreateClient}/>
-                    <FaRedoAlt className="icone"/>           
+                    <FaRedoAlt className="icone" onClick={UpdatedOutdatedClients}/>           
                 </ContainerOpcoes>
 
                 <Tabela>
@@ -109,7 +109,9 @@ export function ListClient() {
 
                                 }} className="icone" title="Editar"/>
 
-                                <FaRedoAlt className="icone" title="Atualizar"/>     
+                                <FaRedoAlt onClick={() => {
+                                    UpdateOutdatedClient(cliente.id)
+                                    }} className="icone" title="Atualizar"/>     
 
                             </Dado>
 

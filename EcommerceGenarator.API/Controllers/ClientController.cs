@@ -1,6 +1,7 @@
 ﻿using EcommerceGenerator.Application.Commands.ChangeStatusClientCommand;
 using EcommerceGenerator.Application.Commands.CreateClientCommand;
 using EcommerceGenerator.Application.Commands.UpdateClientCommand;
+using EcommerceGenerator.Application.Commands.UpdateOutdatedClient;
 using EcommerceGenerator.Application.Commands.UpdateOutdatedClientsCommand;
 using EcommerceGenerator.Application.Queries.GetAllClientsQuery;
 using EcommerceGenerator.Application.Queries.GetClientQuery;
@@ -93,12 +94,33 @@ namespace EcommerceGenarator.Api.Controllers
 
         }
 
+        [HttpPut("{ClientId}")]
+        public async Task<IActionResult> UpdateOutdatedClient(Guid ClientId)
+        {
+
+            var result = await Mediator.Send(new UpdateOutdatedClientCommand(ClientId));
+
+            if (result.IsValid())
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+
+        }
+
         [HttpPut("UpdateOutdatedClients")]
         public async Task<IActionResult> UpdateOutdatedClients()
         {
 
-            await Mediator.Send(new UpdateOutdatedClientsCommand());
-            return Ok("Clientes atualizados com sucesso!");
+            var response = await Mediator.Send(new UpdateOutdatedClientsCommand());
+
+            if (response.IsValid())
+            {
+                return Ok(response);
+            }
+
+            return BadRequest(response);
 
         }
 

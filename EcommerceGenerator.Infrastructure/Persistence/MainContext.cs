@@ -43,6 +43,7 @@ namespace EcommerceGenerator.Infrastructure.Persistence
 
             base.OnModelCreating(builder);
             builder.ApplyConfiguration(new UserMap());
+            builder.ApplyConfiguration(new ProductMap());
 
         }
 

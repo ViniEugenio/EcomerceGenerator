@@ -58,8 +58,10 @@ namespace EcommerceGenerator.Infrastructure.Persistence.Repositories.AdminReposi
 
         }
 
-        public async Task UpdateOutdatedClients()
+        public async Task<bool> UpdateOutdatedClients()
         {
+
+            bool SomeClientUpdate = false;
 
             var FoundedClients = await GetAll(client => client.Active);
             foreach (var client in FoundedClients)
@@ -67,10 +69,15 @@ namespace EcommerceGenerator.Infrastructure.Persistence.Repositories.AdminReposi
 
                 if (!await UpdatedDatabase(client.DataBase))
                 {
+
                     await UpdateClientDataBase(client.DataBase);
+                    SomeClientUpdate = true;
+
                 }
 
             }
+
+            return SomeClientUpdate;
 
         }
 

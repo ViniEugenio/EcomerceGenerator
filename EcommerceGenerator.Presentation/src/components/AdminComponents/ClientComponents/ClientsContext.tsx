@@ -14,6 +14,8 @@ interface clientContextData {
     CreateClient: (model: clientCreateData) => Promise<string[]>;
     ChangeStatusClient: (clientId: string) => void;
     UpdateClient: (model: cliente) => Promise<string[]>;
+    UpdateOutdatedClient: (clientId: string) => void;
+    UpdatedOutdatedClients: () => void;
 
 }
 
@@ -112,13 +114,59 @@ export function ClientsProvider({children} : ClientContextProps) {
 
     }
 
+    function UpdateOutdatedClient(clientId: string) {
+
+        api.put<response>(`https://localhost:7159/api/admin/client/${clientId}`)
+        .then(response=> {
+
+            setClients(clients.map(client=> {
+
+                if(client.id == clientId) {
+                    client.updatedDatabase = true;                   
+                }
+
+                return client;
+
+            }));
+
+        })
+        .catch(error =>{
+            alert(error.response.data.message);
+        });
+
+    }
+
+    function UpdatedOutdatedClients() {
+
+        api.put<response>('https://localhost:7159/api/admin/client/UpdateOutdatedClients')
+        .then(response=> {
+
+            setClients(clients.map(client=> {
+
+                if(!client.updatedDatabase) {
+                    client.updatedDatabase = true;                   
+                }
+
+                return client;
+
+            }));
+
+        })
+        .catch(error =>{
+            alert(error.response.data.message);
+        });
+
+    }
+
     return(
 
         <ClientsContext.Provider value={{
             clients,
             CreateClient,
             ChangeStatusClient,
-            UpdateClient
+            UpdateClient,
+            UpdateOutdatedClient,
+            UpdatedOutdatedClients
         }}>
 
             {children}

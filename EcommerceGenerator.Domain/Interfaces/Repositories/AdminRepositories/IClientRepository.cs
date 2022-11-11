@@ -7,7 +7,7 @@ namespace EcommerceGenerator.Domain.Interfaces.Repositories.AdminRepositories
 
         Task<string> GetDataBaseClient();
         Task<bool> UpdatedDatabase(string DataBase);
-        Task UpdateOutdatedClients();
+        Task<bool> UpdateOutdatedClients();
         Task<Client> CreateClient(Client model);
         Task UpdateClientDataBase(string DataBase);
         Task ChangeStatusClient(Client model);
