@@ -1,4 +1,4 @@
-import { ClientsProvider } from "../AdminComponents/ClientComponents/ClientsContext";
+import { ClientsProvider } from "../../hooks/useClients";
 import { ListClient } from "../AdminComponents/ClientComponents/ListClient";
 import { ListProduct } from "../ProductComponents/ListProduct";
 import { Container } from "./style";

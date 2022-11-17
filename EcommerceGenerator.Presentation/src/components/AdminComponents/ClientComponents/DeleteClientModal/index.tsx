@@ -2,7 +2,7 @@ import Modal from 'react-modal';
 import { Container } from './style';
 import { FaTimes } from "react-icons/fa";
 import { useContext } from 'react';
-import { ClientsContext } from '../ClientsContext';
+import { useClients } from '../../../../hooks/useClients';
 
 interface DeleteClientModalProps {
 
@@ -14,7 +14,7 @@ interface DeleteClientModalProps {
 
 export function DeleteClientModal({isOpen, modalHandler, clientId}: DeleteClientModalProps) {
 
-    const { ChangeStatusClient } = useContext(ClientsContext);
+    const { ChangeStatusClient } = useClients();
 
     function handlerDeleteClient() {
 

@@ -3,14 +3,14 @@ import { FaRedoAlt, FaPlus, FaTimesCircle, FaEdit, FaCheck } from "react-icons/f
 import { useContext, useState } from "react";
 import { ActiveLabel, DisabledLabel } from "../../../../styles/commonStyles";
 import { CreateClientModal } from "../CreateClientModal";
-import { ClientsContext } from "../ClientsContext";
 import { DeleteClientModal } from "../DeleteClientModal";
 import { cliente } from "../../../../models/cliente";
 import { UpdateClientModal } from "../UpdateClientModal";
+import { useClients } from "../../../../hooks/useClients";
 
 export function ListClient() {
 
-    const { clients, UpdateOutdatedClient, UpdatedOutdatedClients } = useContext(ClientsContext);
+    const { clients, UpdateOutdatedClient, UpdatedOutdatedClients } = useClients();
     
     const[modalOpenCreateClient, handlerModalCreateClient] = useState(false);
 

@@ -2,7 +2,7 @@ import Modal from 'react-modal';
 import { Container, ContainerErrors, Input } from './style';
 import { FaTimes } from "react-icons/fa";
 import { FormEvent, useState, useContext } from 'react';
-import { ClientsContext } from '../ClientsContext';
+import { useClients } from '../../../../hooks/useClients';
 
 interface CreateClientModalProps {
     isOpen: boolean
@@ -11,7 +11,7 @@ interface CreateClientModalProps {
 
 export function CreateClientModal({ isOpen, modalHandler } : CreateClientModalProps) {    
 
-    const {CreateClient} = useContext(ClientsContext);
+    const {CreateClient} = useClients();
 
     const[name, setName] = useState('');
     const[host, setHost] = useState('');

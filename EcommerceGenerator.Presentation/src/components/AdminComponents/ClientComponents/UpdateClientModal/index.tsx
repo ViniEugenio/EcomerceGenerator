@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import { cliente } from '../../../../models/cliente';
 import { FaTimes } from "react-icons/fa";
 import { Container, ContainerErrors, Input } from './style';
-import { ClientsContext } from '../ClientsContext';
+import { useClients } from '../../../../hooks/useClients';
 
 interface UpdateClientModalProps {
     isOpen: boolean;
@@ -13,7 +13,7 @@ interface UpdateClientModalProps {
 
 export function UpdateClientModal({isOpen, modalHandler, ActualClient}: UpdateClientModalProps) {   
 
-    const { UpdateClient } = useContext(ClientsContext);
+    const { UpdateClient } = useClients();
 
     const[nameError, setNameError] = useState(false);
     const[nameListError, setNameListError] = useState<string[]>([]);
