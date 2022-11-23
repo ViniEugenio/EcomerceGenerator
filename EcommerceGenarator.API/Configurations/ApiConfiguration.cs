@@ -1,10 +1,4 @@
 ﻿using EcommerceGenarator.Api.Filters;
-using EcommerceGenerator.Application.Validations.Client;
-using FluentValidation;
-using FluentValidation.AspNetCore;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Options;
-using System.Reflection;
 
 namespace EcommerceGenarator.Api.Configurations
 {
@@ -29,10 +23,14 @@ namespace EcommerceGenarator.Api.Configurations
                 app.UseSwaggerUI();
             }
 
+            app.UseExceptionHandler("/error/500");
+            app.UseStatusCodePagesWithRedirects("/error/{0}");
+
             app.UseCors(builder => builder
-    .AllowAnyOrigin()
-    .AllowAnyMethod()
-    .AllowAnyHeader());
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+
             app.UseHttpsRedirection();
             app.UseAuthorization();
             app.MapControllers();

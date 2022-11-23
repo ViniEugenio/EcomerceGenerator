@@ -17,11 +17,21 @@ export const Menu = styled.ul`
 
 `;
 
-export const Link = styled.li`
+interface LinkProps {
+    active: boolean;
+}
+
+export const Link = styled.li<LinkProps>`
 
     margin: 0 5px;
     padding: 10px 5px;   
     text-align: center;
+    ${props=> props.active ? `
+
+        outline: 1px solid #FFF;
+        border-radius: 5px;
+
+    `: ''}
 
     &:hover {
 

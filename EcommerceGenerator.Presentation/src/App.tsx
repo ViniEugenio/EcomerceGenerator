@@ -1,9 +1,6 @@
-import { useState } from "react";
-import { ContentPage } from "./components/ContentPage";
-import { Header } from "./components/Header";
 import { GlobalStyle } from "./styles/global";
-import Modal from 'react-modal';
-import { ClientsProvider } from "./hooks/useClients";
+import { Router } from "./Router";
+import { BrowserRouter } from "react-router-dom";
 
 export function App() {
 
@@ -11,12 +8,11 @@ export function App() {
 
     <>
     
-
       <GlobalStyle/>    
-      <Header/>    
-      <ContentPage/>
 
-
+      <BrowserRouter>
+          <Router/> 
+        </BrowserRouter>
      
     </>
 

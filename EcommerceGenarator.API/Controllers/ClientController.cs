@@ -26,6 +26,7 @@ namespace EcommerceGenarator.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllClients()
         {
+            return StatusCode(403);
             return Ok(await Mediator.Send(new GetAllClientsQuery()));
         }
 

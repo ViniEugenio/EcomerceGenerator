@@ -57,67 +57,77 @@ export function ListClient() {
 
                 <Tabela>
 
-                    <Cabecalho>
-                        <THead>Nome do cliente</THead>
-                        <THead>Host</THead>
-                        <THead>Data de Cadastro</THead>
-                        <THead>Status</THead>
-                        <THead>Banco de dados</THead>
-                        <THead>Ações</THead>
-                    </Cabecalho>
+                    <thead>
 
-                   {clients.map( cliente => (
+                        <Cabecalho>
+                            <THead>Nome do cliente</THead>
+                            <THead>Host</THead>
+                            <THead>Data de Cadastro</THead>
+                            <THead>Status</THead>
+                            <THead>Banco de dados</THead>
+                            <THead>Ações</THead>
+                        </Cabecalho>
 
-                        <Dados key={cliente.id}>
+                    </thead>
 
-                            <Dado>{cliente.name}</Dado>
-                            <Dado>{cliente.host}</Dado>
-                            <Dado>{new Intl.DateTimeFormat('pt-BR').format(new Date(cliente.createdDate))}</Dado>
-                            <Dado>
-                                {cliente.active ? <ActiveLabel>Ativo</ActiveLabel> : <DisabledLabel>Desativado</DisabledLabel>}
-                            </Dado>
-                            <Dado>
-                                {cliente.updatedDatabase ? <ActiveLabel>Atualizado</ActiveLabel> : <DisabledLabel>Desatualizado</DisabledLabel>}
-                            </Dado>
-                            <Dado>
+                    <tbody>
+                        
+                    {clients.map( cliente => (
 
-                                { 
-                                    cliente.active ? 
-                                    
-                                    <FaTimesCircle onClick={() => {
+                        
+                            <Dados key={cliente.id}>
 
-                                        setActualClientId(cliente.id);
-                                        openModalDeleteClient();
+                                <Dado>{cliente.name}</Dado>
+                                <Dado>{cliente.host}</Dado>
+                                <Dado>{new Intl.DateTimeFormat('pt-BR').format(new Date(cliente.createdDate))}</Dado>
+                                <Dado>
+                                    {cliente.active ? <ActiveLabel>Ativo</ActiveLabel> : <DisabledLabel>Desativado</DisabledLabel>}
+                                </Dado>
+                                <Dado>
+                                    {cliente.updatedDatabase ? <ActiveLabel>Atualizado</ActiveLabel> : <DisabledLabel>Desatualizado</DisabledLabel>}
+                                </Dado>
+                                <Dado>
+
+                                    { 
+                                        cliente.active ? 
                                         
-                                    }} className="icone" title="Desativar" /> 
-                                    
-                                    :
+                                        <FaTimesCircle onClick={() => {
 
-                                    <FaCheck onClick={() => {
-
-                                        setActualClientId(cliente.id);
-                                        openModalDeleteClient();
+                                            setActualClientId(cliente.id);
+                                            openModalDeleteClient();
+                                            
+                                        }} className="icone" title="Desativar" /> 
                                         
-                                    }} className="icone" title="Desativar" /> 
+                                        :
 
-                                }
+                                        <FaCheck onClick={() => {
 
-                                <FaEdit onClick={() => {
+                                            setActualClientId(cliente.id);
+                                            openModalDeleteClient();
+                                            
+                                        }} className="icone" title="Desativar" /> 
 
-                                    setActualClient({...cliente});
-                                    openModalUpdateClient();
+                                    }
 
-                                }} className="icone" title="Editar"/>
+                                    <FaEdit onClick={() => {
 
-                                <FaRedoAlt onClick={() => {
-                                    UpdateOutdatedClient(cliente.id)
-                                    }} className="icone" title="Atualizar"/>     
+                                        setActualClient({...cliente});
+                                        openModalUpdateClient();
 
-                            </Dado>
+                                    }} className="icone" title="Editar"/>
 
-                        </Dados>       
+                                    <FaRedoAlt onClick={() => {
+                                        UpdateOutdatedClient(cliente.id)
+                                        }} className="icone" title="Atualizar"/>     
 
-                    ))}                      
+                                </Dado>
+
+                            </Dados>       
+                        
+                            
+                        ))}         
+
+                     </tbody>             
 
                 </Tabela>
 
