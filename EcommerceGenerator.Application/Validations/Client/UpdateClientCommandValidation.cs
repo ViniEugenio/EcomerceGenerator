@@ -1,4 +1,4 @@
-﻿using EcommerceGenerator.Application.Commands.UpdateClientCommand;
+﻿using EcommerceGenerator.Application.Commands.ClientCommands.UpdateClientCommand;
 using EcommerceGenerator.Application.Validations.Messages;
 using FluentValidation;
 

@@ -1,13 +1,15 @@
-﻿using EcommerceGenerator.Application.Commands.ChangeStatusClientCommand;
-using EcommerceGenerator.Application.Commands.CreateClientCommand;
-using EcommerceGenerator.Application.Commands.UpdateClientCommand;
-using EcommerceGenerator.Application.Commands.UpdateOutdatedClient;
-using EcommerceGenerator.Application.Commands.UpdateOutdatedClientsCommand;
-using EcommerceGenerator.Application.Queries.GetAllClientsQuery;
-using EcommerceGenerator.Application.Queries.GetClientQuery;
+﻿using EcommerceGenerator.Application.Commands.ClientCommands.ChangeStatusClientCommand;
+using EcommerceGenerator.Application.Commands.ClientCommands.CreateClientCommand;
+using EcommerceGenerator.Application.Commands.ClientCommands.UpdateClientCommand;
+using EcommerceGenerator.Application.Commands.ClientCommands.UpdateOutdatedClient;
+using EcommerceGenerator.Application.Commands.ClientCommands.UpdateOutdatedClients;
+using EcommerceGenerator.Application.Queries.ClientQueries.GetAllClientsQuery;
+using EcommerceGenerator.Application.Queries.ClientQueries.GetClientQuery;
 using EcommerceGenerator.Application.Validations.Messages;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static EcommerceGenarator.Api.Extensions.CustomAuthorization;
 
 namespace EcommerceGenarator.Api.Controllers
 {
@@ -24,13 +26,14 @@ namespace EcommerceGenarator.Api.Controllers
         }
 
         [HttpGet]
+        [ClaimsAuthorize("Admin", "Read")]
         public async Task<IActionResult> GetAllClients()
         {
-            return StatusCode(403);
             return Ok(await Mediator.Send(new GetAllClientsQuery()));
         }
 
         [HttpGet("{ClientId}")]
+        [ClaimsAuthorize("Admin", "Read")]
         public async Task<IActionResult> GetClient(Guid Id)
         {
 
@@ -49,6 +52,7 @@ namespace EcommerceGenarator.Api.Controllers
         }
 
         [HttpPost]
+        [ClaimsAuthorize("Admin", "Create")]
         public async Task<IActionResult> CreateClient([FromBody] CreateClientCommand model)
         {
 
@@ -63,6 +67,7 @@ namespace EcommerceGenarator.Api.Controllers
         }
 
         [HttpPatch("{ClientId}")]
+        [ClaimsAuthorize("Admin", "Update")]
         public async Task<IActionResult> ChangeStatusClient(Guid ClientId)
         {
 
@@ -81,6 +86,7 @@ namespace EcommerceGenarator.Api.Controllers
         }
 
         [HttpPut]
+        [ClaimsAuthorize("Admin", "Update")]
         public async Task<IActionResult> UpdateClient([FromBody] UpdateClientCommand model)
         {
 
@@ -96,6 +102,7 @@ namespace EcommerceGenarator.Api.Controllers
         }
 
         [HttpPut("{ClientId}")]
+        [ClaimsAuthorize("Admin", "Update")]
         public async Task<IActionResult> UpdateOutdatedClient(Guid ClientId)
         {
 
@@ -111,6 +118,7 @@ namespace EcommerceGenarator.Api.Controllers
         }
 
         [HttpPut("UpdateOutdatedClients")]
+        [ClaimsAuthorize("Admin", "Update")]
         public async Task<IActionResult> UpdateOutdatedClients()
         {
 

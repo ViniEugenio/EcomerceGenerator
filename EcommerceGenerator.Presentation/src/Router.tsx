@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { ListClient } from './components/AdminComponents/ClientComponents/ListClient';
 import { CreateProduct } from './components/AdminComponents/ProductComponents/CreateProduct';
 import { ListProduct } from './components/ProductComponents/ListProduct';
+import { LoginComponent } from './components/UserComponents/LoginComponent';
 import { AdminLayout } from './layouts/AdminLayout';
 import { ClientLayout } from './layouts/ClientLayout';
 
@@ -20,6 +21,10 @@ export function Router() {
                </Route>
 
                <Route path='product/create' element={<CreateProduct/>}/>
+
+            </Route>
+
+            <Route path='login' element={<LoginComponent/>}>                
 
             </Route>
 

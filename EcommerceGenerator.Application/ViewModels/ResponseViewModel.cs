@@ -12,6 +12,16 @@
             Errors.Add(Message);
         }
 
+        public void AddManyErrors(string[] Messages)
+        {
+
+            if (Messages.Any())
+            {
+                Errors.AddRange(Messages);
+            }
+
+        }
+
         public void AddMessage(string Message)
         {
             this.Message = Message;

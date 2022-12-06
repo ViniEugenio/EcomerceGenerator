@@ -11,6 +11,7 @@ namespace EcommerceGenerator.Domain.Interfaces.Repositories
         Task<bool> Exists(Expression<Func<T, bool>> expression);
         Task<List<T>> GetAll(Expression<Func<T, bool>> expression);
         Task<List<T>> GetAll();
+        Task<int> CountByExpression(Expression<Func<T, bool>> expression);
         Task<T> Add(T model);
         Task Update(T model);
         Task SaveChanges();

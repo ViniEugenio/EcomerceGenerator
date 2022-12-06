@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
-using EcommerceGenerator.Application.Commands.CreateClientCommand;
+using EcommerceGenerator.Application.Commands.ClientCommands.CreateClientCommand;
+using EcommerceGenerator.Application.Commands.UserCommands.CreateUserCommand;
 using EcommerceGenerator.Application.ViewModels.Client;
+using EcommerceGenerator.Application.ViewModels.User;
+using EcommerceGenerator.Domain.Entites;
 using EcommerceGenerator.Domain.Entites.Admin;
 
 namespace EcommerceGenarator.Api.Configurations
@@ -16,6 +19,11 @@ namespace EcommerceGenarator.Api.Configurations
 
                 cfg.CreateMap<Client, ClientViewModel>();
                 cfg.CreateMap<CreateClientCommand, Client>();
+
+                cfg.CreateMap<CreateUserCommand, User>()
+                .ForMember(dest => dest.PasswordHash, opt => opt.MapFrom(prop => prop.Password));
+
+                cfg.CreateMap<User, UserViewModel>();
 
             });
 

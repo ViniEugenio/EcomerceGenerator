@@ -1,4 +1,4 @@
-﻿using EcommerceGenerator.Application.Queries.GetAllClientsQuery;
+﻿using EcommerceGenerator.Application.Queries.ClientQueries.GetAllClientsQuery;
 using MediatR;
 
 namespace EcommerceGenarator.Api.Configurations

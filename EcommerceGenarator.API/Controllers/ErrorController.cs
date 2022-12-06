@@ -6,6 +6,7 @@ namespace EcommerceGenarator.Api.Controllers
 {
 
     [Route("error")]
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class ErrorController : Controller
     {
 

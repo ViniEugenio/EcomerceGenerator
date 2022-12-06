@@ -37,7 +37,7 @@ namespace EcommerceGenerator.Infrastructure.Persistence.Repositories.AdminReposi
                 FoundedClient = await Db.FirstOrDefaultAsync(client => client.Host.Contains("localhost"));
             }
 
-            return FoundedClient.Host;
+            return FoundedClient.DataBase;
 
         }
 

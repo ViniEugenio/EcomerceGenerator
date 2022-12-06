@@ -64,5 +64,9 @@ namespace EcommerceGenerator.Infrastructure.Persistence.Repositories
             await Context.SaveChangesAsync();
         }
 
+        public async Task<int> CountByExpression(Expression<Func<T, bool>> expression)
+        {
+            return await Db.CountAsync(expression);
+        }
     }
 }

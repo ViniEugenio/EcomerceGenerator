@@ -32,6 +32,7 @@ namespace EcommerceGenarator.Api.Configurations
             .AllowAnyHeader());
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();
 
