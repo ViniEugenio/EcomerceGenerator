@@ -1,5 +1,6 @@
 ﻿using EcommerceGenerator.Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using System.Linq.Expressions;
 
 namespace EcommerceGenerator.Infrastructure.Persistence.Repositories
@@ -67,6 +68,21 @@ namespace EcommerceGenerator.Infrastructure.Persistence.Repositories
         public async Task<int> CountByExpression(Expression<Func<T, bool>> expression)
         {
             return await Db.CountAsync(expression);
+        }
+
+        public async Task<IDbContextTransaction> BeginTransaction()
+        {
+            return await Context.Database.BeginTransactionAsync();
+        }
+
+        public async Task CommitTransaction(IDbContextTransaction transaction)
+        {
+            await transaction.CommitAsync();
+        }
+
+        public async Task RollBackTransaction(IDbContextTransaction transaction)
+        {
+            await transaction.RollbackAsync();
         }
     }
 }

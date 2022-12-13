@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using EcommerceGenerator.Application.Validations.Messages;
 using EcommerceGenerator.Application.ViewModels;
-using EcommerceGenerator.Application.ViewModels.User;
 using EcommerceGenerator.Domain.Entites;
 using EcommerceGenerator.Domain.Interfaces.Repositories;
 using MediatR;
@@ -27,38 +26,78 @@ namespace EcommerceGenerator.Application.Commands.UserCommands.CreateUserCommand
         public async Task<ResponseViewModel> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
 
-            var response = new ResponseViewModel();
+            var transaction = await UserRepository.BeginTransaction();
+
+            var response = await ValidateUser(request);
+
+            if (!response.IsValid())
+            {
+                return response;
+            }
 
             var Result = await UserRepository.CreateUser(Mapper.Map<User>(request));
-            var ActualUser = new User();
+
             if (Result.Succeeded)
             {
 
-                ActualUser = await UserRepository.GetUserByIdentifier(request.Email);
+                var ActualUser = await UserRepository.GetUserByIdentifier(request.Email);
                 Result = await AssignUserClaims(ActualUser);
 
-                if (!Result.Succeeded)
+                if (Result.Succeeded)
                 {
-                    response.AddManyErrors(Result.Errors.Select(error => error.Description).ToArray());
+
+                    response.AddMessage(UserMessages.CreateUserSuccess);
+                    response.AddData(ActualUser);
+                    await UserRepository.CommitTransaction(transaction);
+
+                }
+
+                else
+                {
+
+                    response.AddManyErrors(Result.Errors
+                        .Select(error => error.Description).ToArray());
+
                 }
 
             }
 
             else
             {
-                response.AddManyErrors(Result.Errors.Select(error => error.Description).ToArray());
+
+                response.AddManyErrors(Result.Errors
+                    .Select(error => error.Description).ToArray());
+
             }
 
-
-            if (response.IsValid())
+            if (!response.IsValid())
             {
 
-                response.AddMessage(UserMessages.CreateUserSuccess);
-                response.AddData(Mapper.Map<UserViewModel>(ActualUser));
+                response.AddMessage(UserMessages.CreateUserError);
+                await UserRepository.RollBackTransaction(transaction);
 
             }
 
-            else
+            return response;
+
+        }
+
+        private async Task<ResponseViewModel> ValidateUser(CreateUserCommand request)
+        {
+
+            var response = new ResponseViewModel();
+
+            if (await UserRepository.Exists(user => user.Email.Equals(request.Email)))
+            {
+                response.AddError(UserMessages.DuplicatedUserEmail);
+            }
+
+            if (await UserRepository.Exists(user => user.UserName.Equals(request.UserName)))
+            {
+                response.AddError(UserMessages.DuplicatedUserName);
+            }
+
+            if (!response.IsValid())
             {
                 response.AddMessage(UserMessages.CreateUserError);
             }
@@ -73,7 +112,7 @@ namespace EcommerceGenerator.Application.Commands.UserCommands.CreateUserCommand
             var UserAmount = await UserRepository.CountByExpression(user => user.Active);
             var UserClaims = new List<Claim>
             {
-                UserAmount == 0 ? new Claim("Admin", "Admin") : new Claim("Client", "Client")
+                UserAmount == 1 ? new Claim("Admin", "Admin") : new Claim("Client", "Client")
             };
 
             return await UserRepository.AddUserClaims(ActualUser, UserClaims);

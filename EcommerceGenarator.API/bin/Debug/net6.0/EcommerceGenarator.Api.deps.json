@@ -772,6 +772,7 @@
       "EcommerceGenerator.Domain/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity": "2.2.0",
+          "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.Extensions.Identity.Stores": "6.0.10"
         },
         "runtime": {

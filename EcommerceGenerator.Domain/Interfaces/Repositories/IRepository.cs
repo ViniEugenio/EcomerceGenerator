@@ -1,4 +1,5 @@
 ﻿using EcommerceGenerator.Domain.Entites;
+using Microsoft.EntityFrameworkCore.Storage;
 using System.Linq.Expressions;
 
 namespace EcommerceGenerator.Domain.Interfaces.Repositories
@@ -15,6 +16,9 @@ namespace EcommerceGenerator.Domain.Interfaces.Repositories
         Task<T> Add(T model);
         Task Update(T model);
         Task SaveChanges();
+        Task<IDbContextTransaction> BeginTransaction();
+        Task CommitTransaction(IDbContextTransaction transaction);
+        Task RollBackTransaction(IDbContextTransaction transaction);
 
     }
 }

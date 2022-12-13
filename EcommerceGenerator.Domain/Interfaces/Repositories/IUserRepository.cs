@@ -10,7 +10,7 @@ namespace EcommerceGenerator.Domain.Interfaces.Repositories
         Task<IdentityResult> CreateUser(User model);
         Task<User> GetUserByIdentifier(string Identifier);
         Task<bool> LoginUser(User FoundedUser, string Password, bool IsPersistence);
-        Task<IdentityResult> AddUserClaims(User ActualUser, List<Claim> Claims)
+        Task<IdentityResult> AddUserClaims(User ActualUser, List<Claim> Claims);
 
     }
 }
